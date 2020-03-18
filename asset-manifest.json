@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/sfrider/static/css/main.75d9111f.chunk.css",
+    "main.js": "/sfrider/static/js/main.aa3fde39.chunk.js",
+    "main.js.map": "/sfrider/static/js/main.aa3fde39.chunk.js.map",
+    "runtime-main.js": "/sfrider/static/js/runtime-main.a75ac785.js",
+    "runtime-main.js.map": "/sfrider/static/js/runtime-main.a75ac785.js.map",
+    "static/js/2.3f6cdb20.chunk.js": "/sfrider/static/js/2.3f6cdb20.chunk.js",
+    "static/js/2.3f6cdb20.chunk.js.map": "/sfrider/static/js/2.3f6cdb20.chunk.js.map",
+    "index.html": "/sfrider/index.html",
+    "precache-manifest.e5e132c816a9350fc4d21a69ea6a7605.js": "/sfrider/precache-manifest.e5e132c816a9350fc4d21a69ea6a7605.js",
+    "service-worker.js": "/sfrider/service-worker.js",
+    "static/css/main.75d9111f.chunk.css.map": "/sfrider/static/css/main.75d9111f.chunk.css.map",
+    "static/js/2.3f6cdb20.chunk.js.LICENSE.txt": "/sfrider/static/js/2.3f6cdb20.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.a75ac785.js",
+    "static/js/2.3f6cdb20.chunk.js",
+    "static/css/main.75d9111f.chunk.css",
+    "static/js/main.aa3fde39.chunk.js"
+  ]
+}
