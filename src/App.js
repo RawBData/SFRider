@@ -4,6 +4,7 @@ import { Icon } from "leaflet";
 import "./App.css";
 import Racks from "./maps/racks";
 import Traffic from "./maps/traffic";
+import Crime from "./maps/crime";
 
 
 export const icon = new Icon({
@@ -24,7 +25,8 @@ class App extends React.Component{
     this.state={
       mainMapSelection:"racks",
       bikeRacks : [],
-      accidentData: []
+      crime : [],
+      accidentData : []
     }
 
     this.changeMap = this.changeMap.bind(this);
@@ -40,6 +42,17 @@ class App extends React.Component{
         bikeRacks: data,
       })
     })
+
+    fetch("https://data.sfgov.org/resource/wg3w-h783.json")
+    .then(results=> {return results.json()})
+    .then(data=>{
+      console.log(data);
+      data = data.filter(crime=> crime.latitude && crime.incident_category === "Larceny Theft");
+      this.setState({
+        crime: data,
+      })
+    })
+
 
     console.log("state",this.state.bikeRacks);
 
@@ -61,6 +74,11 @@ class App extends React.Component{
       case "traffic":
         console.log("chose traffic to display")
         mapDisplay = (<Traffic racks={this.state.bikeRacks}/>)
+        break;
+    
+      case "crime":
+        console.log("chose traffic to display")
+        mapDisplay = (<Crime crime={this.state.crime}/>)
         break;
     
       default:
@@ -116,11 +134,22 @@ class App extends React.Component{
               <input type="radio" 
                       name="css-tabs" 
                       id="tab-4" 
-                      checked={this.state.mainMapSelection==="al"} 
+                      checked={this.state.mainMapSelection==="crime"} 
+                      class="tab-switch"
+                      onClick={()=>{this.changeMap("crime")}}
+              />
+              <label for="tab-4" class="tab-label">Crime</label>
+            </div>
+
+            <div class="tab">
+              <input type="radio" 
+                      name="css-tabs" 
+                      id="tab-5" 
+                      checked={this.state.mainMapSelection==="all"} 
                       class="tab-switch"
                       onClick={()=>{this.changeMap("all")}}
               />
-              <label for="tab-4" class="tab-label">All</label>
+              <label for="tab-5" class="tab-label">All</label>
             </div>
 
           </div> 
