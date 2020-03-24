@@ -5,6 +5,8 @@ import "./App.css";
 import Racks from "./maps/racks";
 import Traffic from "./maps/traffic";
 import Crime from "./maps/crime";
+import Accidents from "./maps/accidents";
+import All from "./maps/all";
 
 
 export const icon = new Icon({
@@ -26,7 +28,8 @@ class App extends React.Component{
       mainMapSelection:"racks",
       bikeRacks : [],
       crime : [],
-      accidentData : []
+      accidents : [],
+      traffic: []
     }
 
     this.changeMap = this.changeMap.bind(this);
@@ -73,12 +76,27 @@ class App extends React.Component{
         break;
       case "traffic":
         console.log("chose traffic to display")
-        mapDisplay = (<Traffic racks={this.state.bikeRacks}/>)
+        mapDisplay = (<Traffic traffic={this.state.traffic}/>)
         break;
     
       case "crime":
         console.log("chose traffic to display")
         mapDisplay = (<Crime crime={this.state.crime}/>)
+        break;
+
+      case "accidents":
+        console.log("chose traffic to display")
+        mapDisplay = (<Accidents accidents={this.state.accidents}/>)
+        break;
+
+      case "all":
+        console.log("chose traffic to display")
+        mapDisplay = (<All 
+                        crime={this.state.crime}
+                        accidents={this.state.accidents}
+                        racks={this.state.bikeRacks}
+                        traffic={this.state.traffic}
+                      />)
         break;
     
       default:
