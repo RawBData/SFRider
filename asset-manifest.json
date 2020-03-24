@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/SFRider/static/css/main.f1bff051.chunk.css",
-    "main.js": "/SFRider/static/js/main.4a34ae95.chunk.js",
-    "main.js.map": "/SFRider/static/js/main.4a34ae95.chunk.js.map",
+    "main.js": "/SFRider/static/js/main.85b943da.chunk.js",
+    "main.js.map": "/SFRider/static/js/main.85b943da.chunk.js.map",
     "runtime-main.js": "/SFRider/static/js/runtime-main.bd31b8d8.js",
     "runtime-main.js.map": "/SFRider/static/js/runtime-main.bd31b8d8.js.map",
-    "static/js/2.30b58570.chunk.js": "/SFRider/static/js/2.30b58570.chunk.js",
-    "static/js/2.30b58570.chunk.js.map": "/SFRider/static/js/2.30b58570.chunk.js.map",
+    "static/js/2.09f8dd1d.chunk.js": "/SFRider/static/js/2.09f8dd1d.chunk.js",
+    "static/js/2.09f8dd1d.chunk.js.map": "/SFRider/static/js/2.09f8dd1d.chunk.js.map",
     "index.html": "/SFRider/index.html",
-    "precache-manifest.f9c785f8473f1603cc74bbd7c15669c7.js": "/SFRider/precache-manifest.f9c785f8473f1603cc74bbd7c15669c7.js",
+    "precache-manifest.839f2dd44daf878303d6f9eb90e3dea4.js": "/SFRider/precache-manifest.839f2dd44daf878303d6f9eb90e3dea4.js",
     "service-worker.js": "/SFRider/service-worker.js",
     "static/css/main.f1bff051.chunk.css.map": "/SFRider/static/css/main.f1bff051.chunk.css.map",
-    "static/js/2.30b58570.chunk.js.LICENSE.txt": "/SFRider/static/js/2.30b58570.chunk.js.LICENSE.txt"
+    "static/js/2.09f8dd1d.chunk.js.LICENSE.txt": "/SFRider/static/js/2.09f8dd1d.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.bd31b8d8.js",
-    "static/js/2.30b58570.chunk.js",
+    "static/js/2.09f8dd1d.chunk.js",
     "static/css/main.f1bff051.chunk.css",
-    "static/js/main.4a34ae95.chunk.js"
+    "static/js/main.85b943da.chunk.js"
   ]
 }
