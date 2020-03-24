@@ -1,5 +1,5 @@
 import React from "react";
-import { Map, Marker, Popup, TileLayer } from "react-leaflet";
+import { Map, Marker, Popup, TileLayer, MapControl, withLeaflet } from "react-leaflet";
 import { Icon } from "leaflet";
 import "./App.css";
 import Racks from "./maps/racks";
@@ -37,27 +37,41 @@ class App extends React.Component{
   }
 
   componentDidMount(){
+
+    //fetch racks data
     fetch("https://data.sfgov.org/resource/hn4j-6fx5.json")
     .then(results=> {return results.json()})
     .then(data=>{
-      console.log(data);
+      //console.log(data);
       this.setState({
         bikeRacks: data,
       })
     })
 
+    //fetch crime data
     fetch("https://data.sfgov.org/resource/wg3w-h783.json")
     .then(results=> {return results.json()})
     .then(data=>{
-      console.log(data);
+      //console.log(data);
       data = data.filter(crime=> crime.latitude && crime.incident_category === "Larceny Theft");
       this.setState({
         crime: data,
       })
     })
 
+    //fetch traffic data
+    fetch("https://data.sfgov.org/resource/awac-r27z.json")
+    .then(results=> {return results.json()})
+    .then(data=>{
+      console.log(data);
+      //data = data.filter(crime=> crime.latitude && crime.incident_category === "Larceny Theft");
+      this.setState({
+        traffic: data,
+      })
+    })
 
-    console.log("state",this.state.bikeRacks);
+    // console.log("state",this.state.bikeRacks);
+
 
   }
 
@@ -85,12 +99,12 @@ class App extends React.Component{
         break;
 
       case "accidents":
-        console.log("chose traffic to display")
+        console.log("chose accidents to display")
         mapDisplay = (<Accidents accidents={this.state.accidents}/>)
         break;
 
       case "all":
-        console.log("chose traffic to display")
+        console.log("chose all to display")
         mapDisplay = (<All 
                         crime={this.state.crime}
                         accidents={this.state.accidents}
