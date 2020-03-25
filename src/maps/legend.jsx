@@ -10,19 +10,21 @@ class Legend extends MapControl {
 
     legend.onAdd = () => {
       const div = L.DomUtil.create("div", "info legend");
-      const grades = ["Light", "Average", "Medium", "Heavy"];
-      const colors = ["green","yellow","red","purple"]
+      const cats = ["Light", "Medium", "Heavy", "Dense"];
+      const backgroundColors = ["green","yellow","red","purple"]
+      const letterColors = ["white","black","white","white"]
       let labels = [];
 
-      for (let i = 0; i < grades.length; i++) {
-        let level = grades[i];
-        let color = colors[i]
+      for (let i = 0; i < cats.length; i++) {
+        let level = cats[i];
+        let bColor = backgroundColors[i];
+        let tColor = letterColors[i];
 
         labels.push(
           '<i style="background:' +
-            color +
-            '"></i> ' +
-            level
+            bColor + ';color:' + tColor +';' +
+            '"> ' +
+            level + '</i>'
         );
       }
 
@@ -32,6 +34,11 @@ class Legend extends MapControl {
 
     const { map } = this.props.leaflet;
     legend.addTo(map);
+  }
+  
+  componentWillUnmount(){
+      //This overwrite original version wich attemped to remove too late and crashed site
+    //   console.log("this should replace old one");
   }
 }
 

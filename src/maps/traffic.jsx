@@ -1,5 +1,5 @@
 import React from "react";
-import { Map, Marker, Popup, TileLayer, Circle } from "react-leaflet";
+import { Map, Marker, Popup, TileLayer, Circle, MapControl } from "react-leaflet";
 import { Icon } from "leaflet";
 import "../App.css";
 import Legend from './legend';
@@ -22,7 +22,7 @@ export default function RacksMap({traffic}) {
                 attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
               />
 
-              {/* <Legend /> */}
+              <Legend />
     
               {traffic.map(event => (
                 <Circle
