@@ -8,7 +8,7 @@ class Legend extends MapControl {
 
   componentDidMount() { 
 
-    console.log(this.props.markers);
+    // console.log(this.props.markers);
     let years = {
       "2015-Present":[],
       "2010-2014":[],
@@ -21,11 +21,8 @@ class Legend extends MapControl {
       iconSize: [35, 35],
     });
 
-//     lat: "37.754811"
-// lon: "-122.418601"
     for (let i = 0; i < this.props.markers.length; i++) {
       const element = this.props.markers[i];
-      // console.log(element.install_yr);
       let yr = parseInt(element.install_yr)
       switch (true) {
         case (yr>2014):

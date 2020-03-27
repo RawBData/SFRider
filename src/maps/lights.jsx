@@ -3,6 +3,10 @@ import { Map, Marker, Popup, TileLayer } from "react-leaflet";
 import { Icon } from "leaflet";
 import "../App.css";
 
+const icon = new Icon({
+  iconUrl: require("../images/lights.png"),
+  iconSize: [25, 30]
+});
 
 export default function CrimeMap({lights}) {
   const [activeLight, setActiveLight] = React.useState(null);
@@ -30,6 +34,7 @@ export default function CrimeMap({lights}) {
                     {/* console.log("marker opened") */}
                     setActiveLight(light);
                   }}
+                  icon={icon}
                 />
               ))}
     

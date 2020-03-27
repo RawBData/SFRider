@@ -1,64 +1,74 @@
-import React from "react";
-import { Map, Marker, Popup, TileLayer } from "react-leaflet";
-import { Icon } from "leaflet";
-import "../App.css";
+import React, { Component } from 'react'
+import {
+  Circle,
+  FeatureGroup,
+  LayerGroup,
+  LayersControl,
+  Map,
+  Marker,
+  Popup,
+  Rectangle,
+  TileLayer,
+} from "react-leaflet"
+const { BaseLayer, Overlay } = LayersControl
 
+const center = [37.773943, -122.449484]
+const rectangle = [
+  [37.773943, -122.449484],
+  [37.773943, -122.49],
+]
 
-export default function RacksMap({accidents}) {
-  const [activeAccident, setActiveAccident] = React.useState(null);
-  console.log(accidents)
-  return (
-          <div>
-            
-      
-            <div>
-            <Map center={[37.773943, -122.449484]} zoom={13.4}>
-    
-              <TileLayer
-                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+export default class LayersControlExample extends Component<{}> {
+  render() {
+    return (
+      <Map center={center} zoom={13}>
+        <LayersControl position="topright" collapsed={false}>
+          <BaseLayer name="Color">
+            <TileLayer
+              attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+            />
+          </BaseLayer>
+          <BaseLayer checked name="Black and White">
+            <TileLayer
+              attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+              url="https://tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png"
+            />
+          </BaseLayer>
+          <Overlay name="Injury">
+            <Marker position={center}>
+              <Popup>
+                A pretty CSS3 popup. <br /> Easily customizable.
+              </Popup>
+            </Marker>
+          </Overlay>
+          <Overlay checked name="Fatal">
+            <LayerGroup>
+              <Circle center={center} fillColor="blue" radius={200} />
+              <Circle
+                center={center}
+                fillColor="red"
+                radius={100}
+                stroke={false}
               />
-    
-              {accidents.map(event => (
-                <Marker
-                  key={event.on_scene_dttm}
-                  position={[
-                    event.location.latitude,
-                    event.location.longitude
-                  ]}
-                  onClick={() => {
-                    {/* console.log("marker opened") */}
-                    setActiveAccident(event);
-                  }}
+              <LayerGroup>
+                <Circle
+                  center={[center[0], center[1]-0.05]}
+                  color="green"
+                  fillColor="green"
+                  radius={100}
                 />
-              ))}
-    
-              {activeAccident && (
-                <Popup
-                  position={[
-                    activeAccident.location.latitude,
-                    activeAccident.location.longitude
-                  ]}
-                  onClose={() => {
-                    {/* console.log("marker closed") */}
-
-                    setActiveAccident(null);
-                  }}
-                >
-                  <div>
-                    <h2>Type : {activeAccident.call_type}</h2>
-                    <h2>Seriousness : {activeAccident.call_type_group}</h2>
-                    <h2>Neighborhood : {activeAccident.neighborhoods_analysis_boundaries}</h2>
-    
-                  </div>
-                </Popup>
-              )}
-              
-            </Map>
-      
-            </div>
-      
-          </div>
-        );
-                
-      }
+              </LayerGroup>
+            </LayerGroup>
+          </Overlay>
+          <Overlay name="Path">
+            <FeatureGroup color="purple">
+              <Popup>Popup for path</Popup>
+              <Rectangle bounds={rectangle} />
+            </FeatureGroup>
+          </Overlay>
+        </LayersControl>
+      </Map>
+    )
+  }
+}

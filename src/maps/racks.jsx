@@ -13,25 +13,18 @@ export default function RacksMap({racks}) {
   const [activeRack, setActiveRack] = React.useState(null);
   // let Deezracks = racks;
   return (
-          <div>
-            
-            <div>
-              
-            <Map center={[37.773943, -122.449484]} zoom={13.4}>
-              
-              <RacksLegend markers={racks.map(rack=>(rack))}/>
-              
-              <TileLayer
-                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-              />
-              
-              
-            </Map>
-      
-            </div>
-      
-          </div>
-        );
-                
-      }
+      <div>
+        
+        <div> 
+          <Map center={[37.773943, -122.449484]} zoom={13.4}> 
+            <RacksLegend markers={racks.map(rack=>(rack))}/>
+            <TileLayer
+              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+              attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+            />    
+          </Map>
+        </div>
+  
+      </div>
+  );
+}
