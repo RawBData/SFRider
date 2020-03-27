@@ -6,11 +6,12 @@ import Racks from "./maps/racks";
 import Traffic from "./maps/traffic";
 import Crime from "./maps/crime";
 import Accidents from "./maps/accidents";
+import Lights from "./maps/lights";
 import All from "./maps/all";
 
 
-export const icon = new Icon({
-  iconUrl: "../public/bike_black.png",
+const icon = new Icon({
+  iconUrl: require("./images/test.jpg"),
   iconSize: [25, 25]
 });
 
@@ -25,11 +26,12 @@ class App extends React.Component{
   constructor(){
     super();
     this.state={
-      mainMapSelection:"racks",
+      mainMapSelection:"traffic",
       bikeRacks : [],
       crime : [],
       accidents : [],
-      traffic: []
+      traffic: [],
+      lights: []
     }
 
     this.changeMap = this.changeMap.bind(this);
@@ -48,25 +50,52 @@ class App extends React.Component{
       })
     })
 
-    //fetch crime data
+    //fetch crime and accident data
     fetch("https://data.sfgov.org/resource/wg3w-h783.json")
     .then(results=> {return results.json()})
     .then(data=>{
       //console.log(data);
-      data = data.filter(crime=> crime.latitude && crime.incident_category === "Larceny Theft");
+      let crimeData = data.filter(crime=> crime.latitude && crime.incident_category === "Larceny Theft");
+      let accidentData = data.filter(crime=> crime.latitude && crime.incident_category === "Traffic Collision");
+      // console.log(accidentData);
       this.setState({
-        crime: data,
+        crime: crimeData,
+        accidents: accidentData
       })
     })
+
+    //fetch accident data
+    // fetch("https://data.sfgov.org/resource/nuek-vuh3.json")
+    // .then(results=> {return results.json()})
+    // .then(data=>{
+    //   // console.log(data);
+    //   // let crimeData = data.filter(crime=> crime.latitude && crime.incident_category === "Larceny Theft");
+    //   let accidentData = data.filter(acc=> acc.location.latitude && acc.call_type === "Traffic Collision");
+    //   // console.log(accidentData);
+    //   this.setState({
+    //     accidents: accidentData
+    //   })
+    // })
 
     //fetch traffic data
     fetch("https://data.sfgov.org/resource/awac-r27z.json")
     .then(results=> {return results.json()})
     .then(data=>{
-      console.log(data);
+      // console.log(data);
       //data = data.filter(crime=> crime.latitude && crime.incident_category === "Larceny Theft");
       this.setState({
         traffic: data,
+      })
+    })
+
+    //
+    //fetch Bicyle lights location
+    fetch("https://data.sfgov.org/resource/a5zr-cehj.json")
+    .then(results=> {return results.json()})
+    .then(data=>{
+      console.log(data);
+      this.setState({
+        lights: data,
       })
     })
 
@@ -86,7 +115,9 @@ class App extends React.Component{
     let mapDisplay;
     switch (this.state.mainMapSelection) {
       case "racks":
-        mapDisplay = (<Racks racks={this.state.bikeRacks}/>)
+        mapDisplay = (<Racks 
+                        icon={icon}
+                        racks={this.state.bikeRacks}/>)
         break;
       case "traffic":
         console.log("chose traffic to display")
@@ -97,6 +128,11 @@ class App extends React.Component{
         console.log("chose traffic to display")
         mapDisplay = (<Crime crime={this.state.crime}/>)
         break;
+
+      case "lights":
+          console.log("chose lights to display")
+          mapDisplay = (<Lights lights={this.state.lights}/>)
+          break;
 
       case "accidents":
         console.log("chose accidents to display")
@@ -122,34 +158,35 @@ class App extends React.Component{
       <div>
         <div>
                 <h1>
-                  SFRider: Biking SF Timelapse Data
+                  SFRider: Biking SF Data
                 </h1>
         </div>
 
         <div class="tabs-wrapper">
           <div class="tabs">
-
+            
             <div class="tab">
               <input type="radio" 
                       name="css-tabs" 
                       id="tab-1" 
-                      checked={this.state.mainMapSelection==="racks"} 
+                      checked={this.state.mainMapSelection==="traffic"} 
                       class="tab-switch"
-                      onClick={()=>{this.changeMap("racks")}}
+                      onClick={()=>{this.changeMap("traffic")}}
               />
-              <label for="tab-1" class="tab-label">Racks</label>
+              <label for="tab-1" class="tab-label">Traffic</label>
             </div>
 
             <div class="tab">
               <input type="radio" 
                       name="css-tabs" 
                       id="tab-2" 
-                      checked={this.state.mainMapSelection==="traffic"} 
+                      checked={this.state.mainMapSelection==="racks"} 
                       class="tab-switch"
-                      onClick={()=>{this.changeMap("traffic")}}
+                      onClick={()=>{this.changeMap("racks")}}
               />
-              <label for="tab-2" class="tab-label">Traffic</label>
+              <label for="tab-2" class="tab-label">Racks</label>
             </div>
+
 
             <div class="tab">
               <input type="radio" 
@@ -177,11 +214,22 @@ class App extends React.Component{
               <input type="radio" 
                       name="css-tabs" 
                       id="tab-5" 
+                      checked={this.state.mainMapSelection==="lights"} 
+                      class="tab-switch"
+                      onClick={()=>{this.changeMap("lights")}}
+              />
+              <label for="tab-5" class="tab-label">Lights</label>
+            </div>
+
+            <div class="tab">
+              <input type="radio" 
+                      name="css-tabs" 
+                      id="tab-6" 
                       checked={this.state.mainMapSelection==="all"} 
                       class="tab-switch"
                       onClick={()=>{this.changeMap("all")}}
               />
-              <label for="tab-5" class="tab-label">All</label>
+              <label for="tab-6" class="tab-label">All</label>
             </div>
 
           </div> 
