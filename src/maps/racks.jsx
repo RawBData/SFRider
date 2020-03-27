@@ -1,5 +1,5 @@
 import React from "react";
-import { Map, Marker, Popup, TileLayer } from "react-leaflet";
+import { Map, Marker, Popup, TileLayer,  } from "react-leaflet";
 import { Icon } from "leaflet";
 import "../App.css";
 import RacksLegend from './racksLegend';
@@ -25,46 +25,7 @@ export default function RacksMap({racks}) {
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                 attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
               />
-    
-              {racks.map(rack => {return(
-                <Marker
-                  key={rack.objectid}
-                  position={[
-                    rack.lat,
-                    rack.lon
-                  ]}
-                  
-                  onClick={() => {
-                    {/* console.log("marker opened") */}
-                    setActiveRack(rack);
-                  }}
-
-                  icon={icon}
-                />
-              )}
-              )}
-    
-              {activeRack && (
-                <Popup
-                  position={[
-                    activeRack.lat,
-                    activeRack.lon
-                  ]}
-                  onClose={() => {
-                    {/* console.log("marker closed") */}
-
-                    setActiveRack(null);
-                  }}
-                >
-                  <div>
-                    <h2>Racks : {activeRack.racks}</h2>
-                    <h2>Spaces : {activeRack.spaces}</h2>
-                    <h2>Yr Installed : {activeRack.install_yr}</h2>
-    
-                  </div>
-                </Popup>
-              )}
-
+              
               
             </Map>
       

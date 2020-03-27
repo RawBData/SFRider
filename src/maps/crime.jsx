@@ -21,7 +21,7 @@ export default function CrimeMap({crime}) {
     
               {crime.map(event => (
                 <Marker
-                  key={event.incident_number}
+                  key={event.incident_id}
                   position={[
                     event.latitude,
                     event.longitude

@@ -1,6 +1,8 @@
 import { MapControl, withLeaflet, Marker } from "react-leaflet";
 import L from "leaflet";
 
+
+
 class Legend extends MapControl {
   createLeafletElement(props) {}
 
@@ -13,6 +15,11 @@ class Legend extends MapControl {
       "2005-2009":[],
       "pre-2005":[],
     }
+
+    const theIcon = L.icon({
+      iconUrl: require('../images/lock.png'),
+      iconSize: [35, 35],
+    });
 
 //     lat: "37.754811"
 // lon: "-122.418601"
@@ -39,62 +46,29 @@ class Legend extends MapControl {
       }
     }
 
+    var yr2015_Pres = L.layerGroup(years["2015-Present"].map( rk => (L.marker([rk.lat, rk.lon],{icon: theIcon}).bindPopup(`Spaces: ${rk.spaces}`))))
     
-    var firstGroup = L.layerGroup([
-      L.marker([37.754811, -122.418601]).bindPopup("test"),
-    ]);
-    var secondGroup = L.layerGroup([
-      L.marker([37.754811, -122.418601]),
-    ]);
-
-    var yr2015_Pres = L.layerGroup(years["2015-Present"].map( rk => (L.marker([rk.lat, rk.lon]).bindPopup(`Spaces: ${rk.spaces}`))))
+    var yr2010_2014 = L.layerGroup(years["2010-2014"].map( rk => (L.marker([rk.lat, rk.lon],{icon: theIcon}).bindPopup(`Spaces: ${rk.spaces}`))))
     
-    var yr2010_2014 = L.layerGroup(years["2010-2014"].map( rk => (L.marker([rk.lat, rk.lon]).bindPopup(`Spaces: ${rk.spaces}`))))
+    var yr2005_2009 = L.layerGroup(years["2005-2009"].map( rk => (L.marker([rk.lat, rk.lon],{icon: theIcon}).bindPopup(`Spaces: ${rk.spaces}`))))
     
-    var yr2005_2009 = L.layerGroup(years["2005-2009"].map( rk => (L.marker([rk.lat, rk.lon]).bindPopup(`Spaces: ${rk.spaces}`))))
+    var yrpre_2005 = L.layerGroup(years["pre-2005"].map( rk => (L.marker([rk.lat, rk.lon],{icon: theIcon}).bindPopup(`Spaces: ${rk.spaces}`))))
     
-    var yrpre_2005 = L.layerGroup(years["pre-2005"].map( rk => (L.marker([rk.lat, rk.lon]).bindPopup(`Spaces: ${rk.spaces}`))))
+    var yrAll = L.layerGroup(this.props.markers.map( rk => (L.marker([rk.lat, rk.lon],{icon: theIcon}).bindPopup(`Spaces: ${rk.spaces}`))))
     
-    
-    const legend = L.control({ position: "topright" });
-
-    legend.onAdd = () => {
-      const div = L.DomUtil.create("div", "info legend");
-      const cats = ["Light", "Medium", "Heavy", "Dense"];
-      const backgroundColors = ["green","yellow","red","purple"]
-      const letterColors = ["white","black","white","white"]
-      let labels = [];
-
-      for (let i = 0; i < cats.length; i++) {
-        let level = cats[i];
-        let bColor = backgroundColors[i];
-        let tColor = letterColors[i];
-
-        labels.push(
-          '<i style="background:' +
-            bColor + ';color:' + tColor +';' +
-            '"> ' +
-            level + '</i>'
-        );
-      }
-
-      
-      div.innerHTML = labels.join("<br>");
-      return div;
-    };
     
     const { map } = this.props.leaflet;
 
     
-    L.control.layers({
+    L.control.layers({},{
     "2015-Present":yr2015_Pres,
     "2010-2014" :yr2010_2014,
     "2005-2009" :yr2005_2009,
-    "pre-2005" :yrpre_2005
-    }).addTo(map)
+    "pre-2005" :yrpre_2005,
+    "All" : yrAll,
+    },{position:"topleft",collapsed:false}).addTo(map)
 
     L.control.scale().addTo(map);
-    // legend.addTo(map);
   }
   
   componentWillUnmount(){
