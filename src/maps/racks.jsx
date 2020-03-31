@@ -15,7 +15,7 @@ const center = [37.773943, -122.449484]
 
 export default function RacksMap({racks}) {
   const [activeRack, setActiveRack] = React.useState(null);
-  // let Deezracks = racks;
+  console.log(racks)
   return (
       <div>
 
@@ -140,9 +140,11 @@ export default function RacksMap({racks}) {
                   >
                     <div>
                       <h2>Spaces : {activeRack.spaces}</h2>
+                      <h2>Year Installed : {activeRack.install_yr}</h2>
+                      <h2>Street : {activeRack.street}</h2>
                     </div>
                   </Popup>
-                )}
+            )}
           </Map>
         </div>
   
