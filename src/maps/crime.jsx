@@ -10,7 +10,6 @@ const icon = new Icon({
 
 export default function CrimeMap({crime}) {
   const [activeCrime, setActiveCrime] = React.useState(null);
-  console.log(crime);
   return (
           <div>
             
@@ -25,7 +24,7 @@ export default function CrimeMap({crime}) {
       
                 {crime.map(event => (
                   <Marker
-                    key={event.incident_id+event.incident_number}
+                    key={event.incident_id+event.incident_number + (Math.floor(Math.random() *1000) )}
                     position={[
                       event.latitude,
                       event.longitude

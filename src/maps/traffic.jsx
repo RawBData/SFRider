@@ -7,9 +7,6 @@ import Legend from './legend';
 
 export default function RacksMap({traffic}) {
   const [activeTraffic, setActiveTraffic] = React.useState(null);
-
-  console.log(traffic)
-
   return (
           <div>
             
