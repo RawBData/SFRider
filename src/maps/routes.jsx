@@ -91,7 +91,7 @@ export default function Routes({routes}) {
               {routes.paths.map(path=>(   
               <FeatureGroup key={path.cnn + (Math.floor(Math.random()*10000)*Math.floor(Math.random()*10000))} color="green">
                 <Popup>Bicycle paths (Class I) are off-street paved bikeways. They are separated from vehicle traffic, but are almost always shared with pedestrians</Popup>
-                <Polyline color="lime" positions={path.shape.coordinates} />
+                <Polyline opacity={.35} color="lime" positions={path.shape.coordinates} />
               </FeatureGroup>
               ))}
             </LayerGroup>
@@ -102,7 +102,7 @@ export default function Routes({routes}) {
               {routes.lanes.map(path=>(   
               <FeatureGroup key={path.cnn + (Math.floor(Math.random() *10000)*Math.floor(Math.random()*10000) )} color="orange">
                 <Popup>A standard bike lane (Class II) is a portion of road reserved for the preferential or exclusive use of people biking, indicated by road markings.</Popup>
-                <Polyline color="orange" positions={path.shape.coordinates} />
+                <Polyline opacity={.35} color="orange" positions={path.shape.coordinates} />
               </FeatureGroup>
               ))}
             </LayerGroup>
@@ -113,7 +113,7 @@ export default function Routes({routes}) {
               {routes.routes.map(path=>(   
               <FeatureGroup key={path.cnn + (Math.floor(Math.random() *10000)*Math.floor(Math.random()*10000) )} color="purple">
                 <Popup>Shared lanes (Class III - sharrows) are typically wide travel lanes shared by bicyclists and vehicles.</Popup>
-                <Polyline color="purple" positions={path.shape.coordinates} />
+                <Polyline opacity={.35} color="purple" positions={path.shape.coordinates} />
               </FeatureGroup>
               ))}
             </LayerGroup>
@@ -124,7 +124,7 @@ export default function Routes({routes}) {
               {routes.seperated.map(path=>(   
               <FeatureGroup key={path.cnn + (Math.floor(Math.random() *10000) )} color="blue">
                 <Popup>Separated bikeways (Class IV), also commonly referred to as cycle tracks or protected bikeways, are bicycle facilities that are separated from traffic by parked cars, safe-hit posts, transit islands or other physical barriers.</Popup>
-                <Polyline positions={path.shape.coordinates} />
+                <Polyline opacity={.35} positions={path.shape.coordinates} />
               </FeatureGroup>
               ))}
             </LayerGroup>

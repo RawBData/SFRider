@@ -5,7 +5,7 @@ import "../App.css";
 
 const icon = new Icon({
   iconUrl: require("../images/crime.png"),
-  iconSize: [30, 30]
+  iconSize: [35, 35]
 });
 
 export default function CrimeMap({crime}) {

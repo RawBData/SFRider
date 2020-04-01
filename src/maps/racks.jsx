@@ -7,7 +7,7 @@ import RacksLegend from './racksLegend';
 const { BaseLayer, Overlay } = LayersControl;
 
 const icon = new Icon({
-  iconUrl: require("../images/lock.png"),
+  iconUrl: require("../images/racks_icon.png"),
   iconSize: [30, 30]
 });
 
