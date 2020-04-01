@@ -11,8 +11,10 @@ class Legend extends MapControl {
     legend.onAdd = () => {
       const div = L.DomUtil.create("div", "info legend");
       const cats = ["Light", "Medium", "Heavy", "Dense"];
-      const backgroundColors = ["green","yellow","red","purple"]
-      const letterColors = ["white","black","white","white"]
+      // const backgroundColors = ["green","yellow","red","purple"]
+      const backgroundColors = ["144, 155, 244","103, 232, 51","  248, 254, 77","254,102,31"];
+
+      const letterColors = ["white","black","black","white"]
       let labels = [];
 
       for (let i = 0; i < cats.length; i++) {
@@ -21,8 +23,8 @@ class Legend extends MapControl {
         let tColor = letterColors[i];
 
         labels.push(
-          '<i style="background:' +
-            bColor + ';color:' + tColor +';' +
+          '<i style="background:rgb(' +
+            bColor + ');color:' + tColor +';' +
             '"> ' +
             level + '</i>'
         );

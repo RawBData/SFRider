@@ -1,6 +1,7 @@
 import React from "react";
 import { Map, Marker, Popup, TileLayer, Circle, MapControl } from "react-leaflet";
 import { Icon } from "leaflet";
+import HeatmapLayer from "react-leaflet-heatmap-layer";
 import "../App.css";
 import Legend from './legend';
 
@@ -12,7 +13,7 @@ export default function RacksMap({traffic}) {
             
       
             <div>
-            <Map center={[37.773943, -122.449484]} zoom={13.4}>
+            <Map center={[37.773943, -122.449484]} maxZoom={14} zoom={13.4}>
     
               <TileLayer
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -20,31 +21,14 @@ export default function RacksMap({traffic}) {
               />
 
               <Legend />
-    
-              {traffic.map(event => (
-                <Circle
-                  fillColor={ 
-                    event.model6_vol > 700000 ? "purple" : 
-                    event.model6_vol > 500000 ? "red" :
-                    event.model6_vol > 300000 ? "gold" :
-                    "green"
-                    }
-                  radius={200} 
-                  fillOpacity={.4}
-                  stroke={false}
-                  key={event.objectid}
-                  center={[
-                    event.point.coordinates[1],
-                    event.point.coordinates[0]
-                  ]}
-                  onClick={() => {
-                    {/* console.log("marker opened") */}
-                    setActiveTraffic(event);
-                  }}
-                />
-              ))}
 
-              
+              <HeatmapLayer
+                points={traffic}
+                maxZoom={10}
+                longitudeExtractor={p => p.point.coordinates[0]}
+                latitudeExtractor={p => p.point.coordinates[1]}
+                intensityExtractor={p => parseFloat(p.model6_vol)} 
+              />
               
             </Map>
       
