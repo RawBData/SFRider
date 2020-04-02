@@ -23,6 +23,7 @@ export default function RacksMap({traffic}) {
               <Legend />
 
               <HeatmapLayer
+                opacity={.1}
                 points={traffic}
                 maxZoom={10}
                 longitudeExtractor={p => p.point.coordinates[0]}

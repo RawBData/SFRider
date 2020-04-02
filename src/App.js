@@ -181,6 +181,7 @@ class App extends React.Component{
                         accidents={this.state.accidents}
                         racks={this.state.bikeRacks}
                         traffic={this.state.traffic}
+                        routes={this.state.routes}
                       />)
         break;
     
