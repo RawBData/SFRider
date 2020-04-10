@@ -16,7 +16,7 @@ import HeatmapLayer from "react-leaflet-heatmap-layer";
 const { BaseLayer, Overlay } = LayersControl;
 
 //Focus on GG Park
-const center = [37.768850, -122.485990];
+let center = [37.768850, -122.485990];
 // const center = [37.768850, -122.481883];
 
 const rackIcon = new Icon({
