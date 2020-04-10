@@ -59,6 +59,13 @@ body {
   color: inherit;
 }
 
+
+/* changing the leaflet control fonts*/
+.leaflet-control{
+  font-family: 'Shadows Into Light', cursive;
+  font-weight: bold;
+}
+
 .logo {
   display: flex;
   align-items: center;

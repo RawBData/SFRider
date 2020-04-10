@@ -166,7 +166,7 @@ export default function RacksMap({racks,routes,traffic,crime}) {
                     attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             />
-              <LayersControl position="topright" collapsed={false} >
+              <LayersControl className="layerscontrol" position="topright" collapsed={false} >
 
                 <BaseLayer checked name="GG Park" lon="test" lat="test">
                 <LayerGroup>
