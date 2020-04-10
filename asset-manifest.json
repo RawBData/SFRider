@@ -1,27 +1,28 @@
 {
   "files": {
-    "main.css": "/SFRider/static/css/main.6c81b5f6.chunk.css",
-    "main.js": "/SFRider/static/js/main.d7a15155.chunk.js",
-    "main.js.map": "/SFRider/static/js/main.d7a15155.chunk.js.map",
+    "main.css": "/SFRider/static/css/main.8487d9a8.chunk.css",
+    "main.js": "/SFRider/static/js/main.e8a99c2c.chunk.js",
+    "main.js.map": "/SFRider/static/js/main.e8a99c2c.chunk.js.map",
     "runtime-main.js": "/SFRider/static/js/runtime-main.bd31b8d8.js",
     "runtime-main.js.map": "/SFRider/static/js/runtime-main.bd31b8d8.js.map",
-    "static/js/2.fa42efe6.chunk.js": "/SFRider/static/js/2.fa42efe6.chunk.js",
-    "static/js/2.fa42efe6.chunk.js.map": "/SFRider/static/js/2.fa42efe6.chunk.js.map",
+    "static/js/2.774022b6.chunk.js": "/SFRider/static/js/2.774022b6.chunk.js",
+    "static/js/2.774022b6.chunk.js.map": "/SFRider/static/js/2.774022b6.chunk.js.map",
     "index.html": "/SFRider/index.html",
-    "precache-manifest.44fb56b7133d9d2edabe4832374cd8f0.js": "/SFRider/precache-manifest.44fb56b7133d9d2edabe4832374cd8f0.js",
+    "precache-manifest.341becb9c2d6d0b1090923035215bec6.js": "/SFRider/precache-manifest.341becb9c2d6d0b1090923035215bec6.js",
     "service-worker.js": "/SFRider/service-worker.js",
-    "static/css/main.6c81b5f6.chunk.css.map": "/SFRider/static/css/main.6c81b5f6.chunk.css.map",
-    "static/js/2.fa42efe6.chunk.js.LICENSE.txt": "/SFRider/static/js/2.fa42efe6.chunk.js.LICENSE.txt",
+    "static/css/main.8487d9a8.chunk.css.map": "/SFRider/static/css/main.8487d9a8.chunk.css.map",
+    "static/js/2.774022b6.chunk.js.LICENSE.txt": "/SFRider/static/js/2.774022b6.chunk.js.LICENSE.txt",
     "static/media/crime.png": "/SFRider/static/media/crime.596b3fdf.png",
     "static/media/lights.png": "/SFRider/static/media/lights.3343e2ef.png",
     "static/media/lock.png": "/SFRider/static/media/lock.49d5c9f7.png",
+    "static/media/poi.png": "/SFRider/static/media/poi.bae03b23.png",
     "static/media/racks_icon.png": "/SFRider/static/media/racks_icon.74942809.png",
     "static/media/test.jpg": "/SFRider/static/media/test.73d7cf17.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.bd31b8d8.js",
-    "static/js/2.fa42efe6.chunk.js",
-    "static/css/main.6c81b5f6.chunk.css",
-    "static/js/main.d7a15155.chunk.js"
+    "static/js/2.774022b6.chunk.js",
+    "static/css/main.8487d9a8.chunk.css",
+    "static/js/main.e8a99c2c.chunk.js"
   ]
 }
