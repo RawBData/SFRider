@@ -39,43 +39,60 @@
 
 .leaflet-container{
   width: 100%;
-  height: 71vh;
+  height: 77vh;
 }
 
-/* 
+
 body {
-  max-width: 40rem; 
+  /* max-width: 40rem; 
   padding: 0 1rem;
   font-size: 125%;
   line-height: 1.5;
   margin: 1.5rem auto;
-  font-family: Arial, sans-serif;
+  font-family: Arial, sans-serif; */
+  font-family: 'Shadows Into Light', cursive;
+  background-color: #d7e0e6;
+
 }
 
 * {
   color: inherit;
-  margin: 0;
 }
 
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
+.logo h1{
+  font-size: 5vh;
+  margin: 5px 0 0 0;
+}
 
 @media (max-width: 550px) {
   
   
 }
 
-*/
 
+.map-container{
+  margin: 0px 5px 0 5px;
+}
+
+.main-container{
+  
+}
 
 .tabs-wrapper {
-  max-width: 50rem;
-  width: 100%;
-  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .tabs {
   position: relative;
-  margin: 3rem 0;
-  background: #1abc9c;
+  margin: 1rem 0;
+  /* background: #1abc9c; */
   /* height: 14.75rem; */
 }
 .tabs::before,
@@ -98,12 +115,13 @@ body {
   line-height: 2.75em;
   height: 3em;
   padding: 0 1.618em;
-  background: #1abc9c;
+  background: #67ccc7;
   border-right: 0.125rem solid #16a085;
   color: #fff;
   cursor: pointer;
   top: 0;
   transition: all 0.25s;
+  font-size: 3vh;
 }
 .tab-label:hover {
   top: -0.25rem;
@@ -116,21 +134,24 @@ body {
   z-index: 1;
   top: 2.75em;
   left: 0;
-  padding: 1.618rem;
+  padding: 1.61rem;
   background: #fff;
   color: #2c3e50;
   border-bottom: 0.25rem solid #bdc3c7;
   opacity: 0;
   transition: all 0.35s;
+  font-size: 3vh;
 }
 .tab-switch:checked + .tab-label {
-  background: #fff;
-  color: #2c3e50;
+  background: #666874;
+  color: #67ccc7;
   border-bottom: 0;
   border-right: 0.125rem solid #fff;
   transition: all 0.35s;
   z-index: 1;
   top: -0.0625rem;
+  font-weight: bold;
+  text-decoration: underline;
 }
 .tab-switch:checked + label + .tab-content {
   z-index: 2;

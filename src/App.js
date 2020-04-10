@@ -202,8 +202,9 @@ class App extends React.Component{
 
 
     return (
-      <div>
-        <div>
+      <div className="main-container">
+
+        <div className="logo">
                 <h1>
                   SFRider: Biking SF Data
                 </h1>
@@ -271,7 +272,7 @@ class App extends React.Component{
               <input type="radio" 
                       name="css-tabs" 
                       id="tab-7" 
-                      defaultChecked={this.state.mainMapSelection==="all"} 
+                      defaultChecked={this.state.mainMapSelection==="scenic"} 
                       className="tab-switch"
                       onClick={()=>{this.changeMap("scenic")}}
               />
@@ -281,7 +282,7 @@ class App extends React.Component{
           </div> 
         </div>
 
-        <div>
+        <div className="map-container">
           {mapDisplay}
         </div>
 
