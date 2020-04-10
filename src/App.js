@@ -8,7 +8,7 @@ import Crime from "./maps/crime";
 import Accidents from "./maps/accidents";
 import Lights from "./maps/lights";
 import Routes from "./maps/routes";
-
+import Scenic from "./maps/scenic";
 import All from "./maps/all";
 
 
@@ -184,6 +184,17 @@ class App extends React.Component{
                         routes={this.state.routes}
                       />)
         break;
+
+        case "scenic":
+        // console.log("chose scenic to display")
+        mapDisplay = (<Scenic 
+                        crime={this.state.crime}
+                        accidents={this.state.accidents}
+                        racks={this.state.bikeRacks}
+                        traffic={this.state.traffic}
+                        routes={this.state.routes}
+                      />)
+        break;
     
       default:
         break;
@@ -254,6 +265,17 @@ class App extends React.Component{
                       onClick={()=>{this.changeMap("all")}}
               />
               <label htmlFor="tab-6" className="tab-label">All</label>
+            </div>
+
+            <div className="tab">
+              <input type="radio" 
+                      name="css-tabs" 
+                      id="tab-7" 
+                      defaultChecked={this.state.mainMapSelection==="all"} 
+                      className="tab-switch"
+                      onClick={()=>{this.changeMap("scenic")}}
+              />
+              <label htmlFor="tab-7" className="tab-label">Scenic</label>
             </div>
 
           </div> 
