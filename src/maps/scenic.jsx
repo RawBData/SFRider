@@ -10,14 +10,18 @@ import {
   Rectangle,
   Polyline,
   TileLayer,
+  Viewport
 } from "react-leaflet"
 import { Icon } from 'leaflet'
 import HeatmapLayer from "react-leaflet-heatmap-layer";
 const { BaseLayer, Overlay } = LayersControl;
 
-//Focus on GG Park
-let center = [37.768850, -122.485990];
+/*Focus on GG Park
+// let center = [37.768850, -122.485990];
 // const center = [37.768850, -122.481883];
+//presidio
+// newCetner = [37.796711, -122.463787]
+*/
 
 const rackIcon = new Icon({
   iconUrl: require("../images/racks_icon.png"),
@@ -33,9 +37,6 @@ const poiIcon = new Icon({
   iconUrl: require("../images/poi.png"),
   iconSize: [35, 35]
 });
-
-export default function RacksMap({racks,routes,traffic,crime}) {
-  const [activeRack, setActiveRack] = React.useState(null);
 
   //adding specific points of interest by hand
   const pointsOfInterest=[{
@@ -78,27 +79,150 @@ export default function RacksMap({racks,routes,traffic,crime}) {
     name:"Strawberry Hill",
     lon:37.768597,
     lat:-122.475353
-  }]
+  }//presidio
+  ,{
+    name:"Baker Beach",
+    lon:37.793469,
+    lat:-122.484008
+  },{
+    name:"Golden Gate Bridge",
+    lon:37.807756,
+    lat:-122.474770
+  },{
+    name:"Fort Point",
+    lon:37.810519,
+    lat:-122.476586
+  },{
+    name:"Walt Disney Museum",
+    lon:37.801304,
+    lat:-122.458492
+  },{
+    name:"Crissy Field",
+    lon:37.804301,
+    lat:-122.465436
+  },{
+    name:"Cafe RX",
+    lon:37.800440,
+    lat:-122.452095
+  },{
+    name:"Fort Point Brewing",
+    lon:37.803262,
+    lat:-122.464960
+  },{
+    name:"Battery Cranston",
+    lon:37.806992,
+    lat:-122.476647
+  },{
+    name:"Nike Missle Site",
+    lon:37.791920,
+    lat:-122.474626
+  }
+]
+
+export default function RacksMap({racks,routes,traffic,crime}) {
+  const [activeRack, setActiveRack] = React.useState(null);
+  const [center, setCenter] = React.useState([37.768850, -122.485990]);
+  const [viewPort, setViewport] = React.useState( {center: [37.768850, -122.485990] ,zoom: 14.5} );
+
+ 
+  /*
+  onload={()=>{setViewport( {center: [37.768850, -122.485990] ,zoom: 14.5} )}}
+  onload={()=>{setViewport({center: [37.796711, -122.463787],zoom: 14.5} )}}
+
+  */
+
+
+
+
+
+ const changeViewPortCenter = (name)=>{
+   switch (name) {
+      case "GG Park":
+        setViewport( {center: [37.768850, -122.485990], zoom: 14.5} )
+      break;
+
+      case "The Presidio":
+        setViewport( {center: [37.80, -122.467], zoom: 14.5} )
+      break;
+
+      case "The Embarcadero":
+        setViewport( {center: [37.794852, -122.393027], zoom: 13.5} )
+      break;     
+   
+     default:
+       break;
+   }
+ }
+  
   return (
           <div>
-            
-      
-            <div>
-            
-            <Map center={center} zoom={14.5}>
-              <LayersControl position="topright" collapsed={false}>
-                <BaseLayer checked name="Color">
-                  <TileLayer
+            <div>    
+            <Map 
+              animate={true}
+              viewport={viewPort}
+              onbaselayerchange={(it)=>{changeViewPortCenter(it.name)}}
+            >
+            <TileLayer  
                     attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                  />
+            />
+              <LayersControl position="topright" collapsed={false} >
+
+                <BaseLayer checked name="GG Park" lon="test" lat="test">
+                <LayerGroup>
+                        <FeatureGroup>
+                          <Popup>
+                            <div>
+                              <h2>Place : Golden Gate Park</h2>
+                            </div>
+                          </Popup>
+
+                          <Marker
+                            key={Math.random()}
+                            position={[37.768850, -122.485990]}
+                            icon={poiIcon}
+                          />
+                        </FeatureGroup>
+                  </LayerGroup>
                 </BaseLayer>
-                <BaseLayer name="Black and White">
-                  <TileLayer
-                    attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-                    url="https://tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png"
-                  />
+
+                <BaseLayer name="The Presidio" >
+                    <LayerGroup>
+                        <FeatureGroup>
+                          <Popup>
+                            <div>
+                              <h2>Place : The Presidio</h2>
+                            </div>
+                          </Popup>
+
+                          <Marker
+                            key={Math.random()}
+                            position={[37.796711, -122.463787]}
+                            icon={poiIcon}
+                          />
+                        </FeatureGroup>
+                  </LayerGroup>
                 </BaseLayer>
+
+                <BaseLayer name="The Embarcadero" >
+                    <LayerGroup>
+                        <FeatureGroup>
+                          <Popup>
+                            <div>
+                              <h2>Place : The Embarcadero</h2>
+                            </div>
+                          </Popup>
+
+                          <Marker
+                            key={Math.random()}
+                            position={[37.794852, -122.393027]}
+                            icon={poiIcon}
+                          />
+                        </FeatureGroup>
+                  </LayerGroup>
+                </BaseLayer>
+
+
 
                 <Overlay checked name="Routes">
                   <LayerGroup>
