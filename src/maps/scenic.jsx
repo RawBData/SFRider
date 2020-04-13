@@ -117,6 +117,36 @@ const poiIcon = new Icon({
     lon:37.791920,
     lat:-122.474626
   }
+  //Embarcadero
+  ,{
+    name:"Oracle",
+    lon:37.777341,
+    lat:-122.390367
+  },{
+    name:"Bay Bridge Overpass",
+    lon:37.788628,
+    lat:-122.387820
+  },{
+    name:"Ferry Building",
+    lon:37.795366,
+    lat:-122.393788
+  },{
+    name:"Rincon Park/Giant Arrow",
+    lon:37.791612,
+    lat:-122.389657
+  },{
+    name:"Exploratorium",
+    lon:37.801027,
+    lat:-122.398914
+  },{
+    name:"Pier 39",
+    lon:37.808472,
+    lat:-122.409894
+  },{
+    name:"Fishermans Wharf",
+    lon:37.807616,
+    lat:-122.420830
+  }
 ]
 
 export default function RacksMap({racks,routes,traffic,crime}) {
