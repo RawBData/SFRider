@@ -30,7 +30,7 @@ const crimeIcon = new Icon({
 
 export default function RacksMap({racks,routes,traffic,crime}) {
   const [activeRack, setActiveRack] = React.useState(null);
-
+  console.log(racks)
   return (
           <div>
             
@@ -88,7 +88,7 @@ export default function RacksMap({racks,routes,traffic,crime}) {
 
                 <Overlay checked name="Racks">
                   <LayerGroup>
-                      {racks.map( rk => (
+                      {racks.filter(rk=>parseInt(rk.spaces)>2).map( rk => (
                         <FeatureGroup>
                           <Popup>
                             <div>

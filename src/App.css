@@ -50,7 +50,8 @@ body {
   line-height: 1.5;
   margin: 1.5rem auto;
   font-family: Arial, sans-serif; */
-  font-family: 'Shadows Into Light', cursive;
+  /* font-family: 'Shadows Into Light', cursive; */
+  font-family: 'Nanum Gothic', sans-serif;
   background-color: #d7e0e6;
 
 }
@@ -62,7 +63,9 @@ body {
 
 /* changing the leaflet control fonts*/
 .leaflet-control{
-  font-family: 'Shadows Into Light', cursive;
+  /* font-family: 'Shadows Into Light', cursive; */
+  font-family: 'Nanum Gothic', sans-serif;
+
   font-weight: bold;
 }
 

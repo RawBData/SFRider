@@ -146,7 +146,7 @@ export default function RacksMap({racks,routes,traffic,crime}) {
       break;
 
       case "The Embarcadero":
-        setViewport( {center: [37.794852, -122.393027], zoom: 13.5} )
+        setViewport( {center: [37.794852, -122.393027], zoom: 14.5} )
       break;     
    
      default:
@@ -215,7 +215,7 @@ export default function RacksMap({racks,routes,traffic,crime}) {
 
                           <Marker
                             key={Math.random()}
-                            position={[37.794852, -122.393027]}
+                            position={[37.795883, -122.402943]}
                             icon={poiIcon}
                           />
                         </FeatureGroup>
@@ -260,7 +260,7 @@ export default function RacksMap({racks,routes,traffic,crime}) {
 
                 <Overlay checked name="Racks">
                   <LayerGroup>
-                      {racks.map( rk => (
+                      {racks.filter(rk=>parseInt(rk.install_yr)>2009).map( rk => (
                         <FeatureGroup>
                           <Popup>
                             <div>
