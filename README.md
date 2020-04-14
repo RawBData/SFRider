@@ -174,7 +174,8 @@ SFRider is a single page React app to showcase a fundamental understanding of HT
 
 ### Bonus Features
 - [ ] Scenic route showcases three iconic San Francisco locations with special points of interest and relevant biking data
-    <!-- ![Splash](./docs/sound_toggle.gif) -->
+    ![Splash](./readme_files/scenic.gif)
+
 
 
 ***
