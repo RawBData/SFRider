@@ -87,7 +87,9 @@ body {
 
 
 .map-container{
-  margin: 0px 5px 0 5px;
+  margin: 0 1em .25em 1em;
+  border-style: solid;
+  border-color: #666874;
 }
 
 .main-container{
@@ -104,6 +106,7 @@ body {
   margin: 1rem 0;
   /* background: #1abc9c; */
   /* height: 14.75rem; */
+  
 }
 .tabs::before,
 .tabs::after {

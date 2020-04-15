@@ -10,6 +10,7 @@ import Lights from "./maps/lights";
 import Routes from "./maps/routes";
 import Scenic from "./maps/scenic";
 import All from "./maps/all";
+import Modal from "./components/modal";
 
 
 const icon = new Icon({
@@ -206,7 +207,7 @@ class App extends React.Component{
 
         <div className="logo">
                 <h1>
-                  SFRider: Biking SF Data
+                  SFRider
                 </h1>
         </div>
 
