@@ -34,7 +34,8 @@ class App extends React.Component{
       crime : [],
       accidents : [],
       traffic: [],
-      routes: {}
+      routes: {},
+      modalShow: true,
     }
 
     this.changeMap = this.changeMap.bind(this);
@@ -147,6 +148,12 @@ class App extends React.Component{
       })
   }
 
+  modalShow = e => {
+    this.setState({
+      modalShow: !this.state.modalShow
+    });
+  };
+
   render(){
     let mapDisplay;
     switch (this.state.mainMapSelection) {
@@ -204,6 +211,11 @@ class App extends React.Component{
 
     return (
       <div className="main-container">
+        
+
+        <div className="page-container">
+
+        
 
         <div className="logo">
                 <h1>
@@ -287,7 +299,11 @@ class App extends React.Component{
           {mapDisplay}
         </div>
 
-        
+        </div>
+
+        <div className="modal-container">
+        <Modal onClose={this.modalShow} show={this.state.modalShow}/>
+        </div>
       </div>
     );
 
