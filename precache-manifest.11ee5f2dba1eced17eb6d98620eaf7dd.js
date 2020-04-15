@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "b6a9b011ad1a10eb1c8c7106f3f64784",
+    "revision": "85ae540740ddf88aeee37309d584617a",
     "url": "/SFRider/index.html"
   },
   {
-    "revision": "19fd2114f5cae87ed240",
-    "url": "/SFRider/static/css/main.af9d1c4f.chunk.css"
+    "revision": "9afc3ea4562a249c8946",
+    "url": "/SFRider/static/css/main.c7c0de57.chunk.css"
   },
   {
-    "revision": "bdca86e2e17fc121dcfa",
-    "url": "/SFRider/static/js/2.fdff892b.chunk.js"
+    "revision": "748603f91853c06096ff",
+    "url": "/SFRider/static/js/2.3f2a479b.chunk.js"
   },
   {
     "revision": "8c7fe4041954829e8f9a44c5426cd717",
-    "url": "/SFRider/static/js/2.fdff892b.chunk.js.LICENSE.txt"
+    "url": "/SFRider/static/js/2.3f2a479b.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "19fd2114f5cae87ed240",
-    "url": "/SFRider/static/js/main.a7d7df40.chunk.js"
+    "revision": "9afc3ea4562a249c8946",
+    "url": "/SFRider/static/js/main.0d49c37b.chunk.js"
   },
   {
     "revision": "989ca6ef331426191c1d",
