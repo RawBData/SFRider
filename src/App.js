@@ -247,6 +247,17 @@ class App extends React.Component{
               />
               <label htmlFor="tab-2" className="tab-label">Racks</label>
             </div>
+            
+            <div className="tab">
+              <input type="radio" 
+                      name="css-tabs" 
+                      id="tab-4" 
+                      defaultChecked={this.state.mainMapSelection==="crime"} 
+                      className="tab-switch"
+                      onClick={()=>{this.changeMap("crime")}}
+              />
+              <label htmlFor="tab-4" className="tab-label">Crime</label>
+            </div>
 
             <div className="tab">
               <input type="radio" 
@@ -259,16 +270,6 @@ class App extends React.Component{
               <label htmlFor="tab-5" className="tab-label">Routes</label>
             </div>
 
-            <div className="tab">
-              <input type="radio" 
-                      name="css-tabs" 
-                      id="tab-4" 
-                      defaultChecked={this.state.mainMapSelection==="crime"} 
-                      className="tab-switch"
-                      onClick={()=>{this.changeMap("crime")}}
-              />
-              <label htmlFor="tab-4" className="tab-label">Crime</label>
-            </div>
 
             <div className="tab">
               <input type="radio" 
