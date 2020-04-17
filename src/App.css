@@ -180,6 +180,18 @@ body {
   position: absolute;
 }
 
+@media screen and (max-width: 800px) {
+  body {
+    /* background-color: pink; */
+  }
+
+  .tab-label {
+    font-size: 2.5vw;
+  }
+
+
+}
+
 /* modal */
 .page-container{
   z-index: 1;
@@ -189,7 +201,7 @@ body {
   z-index: 5;
 }
 
-@media screen and (max-width: 550px) {
+/* @media screen and (max-width: 550px) {
   body {
     background-color: lightgreen;
   }
@@ -203,7 +215,9 @@ body {
       border: 1px solid #ccc;
     
   }
-}
+} */
+
+
 
 .modal {
   position: fixed;
@@ -247,7 +261,29 @@ body {
   align-items: center;
 }
 
+@media screen and (max-width: 1265px) {
+  body {
+    /* background-color: purple; */
+  }
 
+  .modal {
+    position: fixed;
+      top: 26%;
+      left: 15%;
+      width: 70%;
+      background: white;
+      border: 1px solid #ccc;
+    
+  }
+
+  .modal-content{
+    margin: 1vh 1vw 2.5vh 1vw;
+    line-height: 3vh;
+    text-align: center;
+    overflow: scroll;
+    height: 50vh;
+  }
+}
 
 
 /* 
