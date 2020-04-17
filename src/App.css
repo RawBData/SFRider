@@ -101,12 +101,11 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 0 1em;
 }
 .tabs {
   position: relative;
   margin: 1rem 0;
-  /* background: #1abc9c; */
-  /* height: 14.75rem; */
   
 }
 .tabs::before,
@@ -252,6 +251,15 @@ body {
 
 
 /* 
+
+key page dimentions 
+width 
+1265 lost one lines
+1080 lose modal over map
+780 lose tabs one lines
+
+
+
 
 body {
   font-size: 16px;
