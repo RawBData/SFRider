@@ -217,15 +217,21 @@ body {
   }
 } */
 
-
+@keyframes mymove {
+  from {left: 7%;}
+  to {left: 15%;}
+}
 
 .modal {
-  position: fixed;
+    position: fixed;
     top: 26%;
     left: 7%;
     width: 70%;
     background: white;
     border: 1px solid #ccc;
+    animation: mymove 1s;
+    animation-timing-function: ease-in-out;
+    animation-direction: reverse;
   
 }
 
@@ -249,9 +255,14 @@ body {
   line-height: 1;
 }
 
+.content-container{
+
+}
+
 .modal-content{
     margin: 1vh 1vw 2.5vh 1vw;
     line-height: 3vh;
+    font-weight: bolder;
     text-align: center;
 }
 
@@ -267,12 +278,14 @@ body {
   }
 
   .modal {
-    position: fixed;
+      position: fixed;
       top: 26%;
       left: 15%;
       width: 70%;
       background: white;
       border: 1px solid #ccc;
+      animation: mymove 1.3s;
+      animation-timing-function: ease-in-out;
     
   }
 
@@ -282,6 +295,7 @@ body {
     text-align: center;
     overflow: scroll;
     height: 50vh;
+    font-size: 1.2vw;
   }
 }
 

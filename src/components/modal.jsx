@@ -10,11 +10,11 @@ export default class Modal extends React.Component {
       return (
         <div class="modal" id="modal">
           <h2 className="modal-title">Pseudocode</h2>
-          <div class="content"><p className="modal-content">
+          <div className="content-container"><p className="modal-content">
               This project is focused on displaying data from API endpoints in novel and engaging ways. <br />
               I used an open source library called React-Leaflet to draw the maps and used OpenSF datasets as API endpoints. <br />
               I designed my own .png markers using Preview and utilized built-in leaflet.js functionality to draw paths and shapes. <br />
-              As a bonus, I created my own "legend" component which is displayed on one of the maps.<br />
+              As a bonus, I created a custom "legend" component which is displayed on one of the maps.<br />
               <br />
               Each of the 6 maps gives a different snapshot of the SFBiking experience. 
               <br />The first three maps, Traffic, Racks and Crime, are of course self explanatory. 

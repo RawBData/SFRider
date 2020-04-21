@@ -1,7 +1,7 @@
 # SFRider
 [SFRider Live](https://rawbdata.github.io/SFRider/ "SFrider")
 
-_A data visualization map that lets bicyclists see the relevant data regaring their rides in San Francisco_
+_A data visualization map that bicyclists can use see the relevant data in different parts of San Francisco_
 
 
 
@@ -11,7 +11,7 @@ _A data visualization map that lets bicyclists see the relevant data regaring th
 ## Background and Overview
 ***
 
-SFRider will be single web react web-app that utilizes OpenSF data to visualize the best times and areas to ride, park, and avoid dangerous intersections in San Francisco. The map will have multiple overlays that depict routes, accidents, density, traffic and more.
+SFRider will be single page react app that utilizes OpenSF data to visualize the best times and areas to ride, park, and avoid dangerous intersections in San Francisco. The map will have multiple overlays that depict routes, crime, traffic and more.
 
 
 
@@ -32,14 +32,14 @@ _A single page react map utilizing react-leaflet to display San Francisco bicycl
 SFRider is a single page React app utilizing city data obtained through OpenSF. 
 
 
-- Contemporary: Uses the most modern datasets to display geolocated data regarding key bicycle data.
+- Contemporary: Uses the most modern datasets to display geolocated data regarding key bicycle information.
 
 - Seamless: Markers, Popups, and Routes are displayed on the map in functional ways
 
 - Fluid: Traffic uses a multi-colored heatmap to display which areas are most effected
 
 
-SFRider is a single page React app to showcase a fundamental understanding of HTML, Javascript, and React
+SFRider is a single page React app to showcase a fundamental understanding of HTML, CSS, Javascript, and React
 
 ***
 ## Functionality
@@ -181,7 +181,7 @@ SFRider is a single page React app to showcase a fundamental understanding of HT
 ***
 ## Challenges
 The most challenging aspects of this project are:
-- [] Avoiding oversaturating the map by sampling data instead of dumping all of it
+- [] Avoiding oversaturating the map by sampling data
 - [] Smooth marker and popup loading with relavent information
 - [] Path drawing and differentiation
 ***
@@ -194,7 +194,7 @@ The most challenging aspects of this project are:
 The goal is to create a unique user experience that is intuitive to use and quick to understand. Users can select which map to display and then drill down into the data in specific areas of the map.
 
 
-The all and scenic maps allow the users to overlay various data maps to curate their own experience
+The **All** and **Scenic** maps allow the users to overlay various data maps to curate their own experience
 
 All data should be correlated with up to date data to ensure accuracy before embarcing on a journey.
 
@@ -202,7 +202,7 @@ All data should be correlated with up to date data to ensure accuracy before emb
 ## Overall Project Experience
 ***
 
-This project was alot of fun to do because of my passion for bicycle riding around san francisco. Being able to gather the relevant data and display it was quite an interesting task. Seeing this data has already made me rethink how and where I should be riding my bike in SF
+This project was alot of fun to do because of my passion for bicycle riding around San Francisco. Being able to gather the relevant data and display it was quite an interesting task. Seeing this data has already made me rethink how and where I should be riding my bike in SF.
 ***
 ## Creator
 ***
