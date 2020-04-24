@@ -52,7 +52,8 @@ body {
   font-family: Arial, sans-serif; */
   /* font-family: 'Shadows Into Light', cursive; */
   font-family: 'Nanum Gothic', sans-serif;
-  background-color: #d7e0e6;
+  /* background-color: #d7e0e6; */
+  background-color: white;
 
 }
 
@@ -256,7 +257,7 @@ body {
 }
 
 .content-container{
-
+  margin: 0 0 3% 0;
 }
 
 .modal-content{
@@ -265,6 +266,15 @@ body {
     font-weight: bolder;
     text-align: center;
 }
+
+.modal-content-2{
+  margin: 1vh 1vw 2.5vh 1vw;
+  line-height: 3vh;
+  font-weight: bolder;
+  text-align: left;
+}
+
+
 
 .modal-title{
   display: flex;
@@ -290,15 +300,25 @@ body {
   }
 
   .modal-content{
-    margin: 1vh 1vw 2.5vh 1vw;
+    margin: 1vh 1vw 5px 1vw;
     line-height: 3vh;
     text-align: center;
     overflow: scroll;
-    height: 50vh;
+    font-size: 1.2vw;
+  }
+  
+  .modal-content-2{
+    margin: 0 0 0 1vw;
+    line-height: 3vh;
+    text-align: left;
+    overflow: scroll;
     font-size: 1.2vw;
   }
 }
 
+.portfolio-link:link{
+  color:#67ccc7;
+}
 
 /* 
 
