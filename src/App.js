@@ -12,11 +12,14 @@ import Scenic from "./maps/scenic";
 import All from "./maps/all";
 import Modal from "./components/modal";
 
+import Logo from "./images/SFRiderLogo_04.png";
+
 
 const icon = new Icon({
   iconUrl: require("./images/test.jpg"),
   iconSize: [25, 25]
 });
+
 
 class App extends React.Component{
 
@@ -215,86 +218,86 @@ class App extends React.Component{
 
         <div className="page-container">
 
-        
+        <div className="header">
+          <div className="logo">
+            <img className="logo-image" src={Logo} alt="website logo" />
+          </div>
 
-        <div className="logo">
-                <h1>
-                  SFRider
-                </h1>
+          <div className="tabs-wrapper">
+            <div className="tabs">
+              
+              <div className="tab">
+                <input type="radio" 
+                        name="css-tabs" 
+                        id="tab-1" 
+                        defaultChecked={this.state.mainMapSelection==="traffic"} 
+                        className="tab-switch"
+                        onClick={()=>{this.changeMap("traffic")}}
+                />
+                <label htmlFor="tab-1" className="tab-label">Traffic</label>
+              </div>
+
+              <div className="tab">
+                <input type="radio" 
+                        name="css-tabs" 
+                        id="tab-2" 
+                        defaultChecked={this.state.mainMapSelection==="racks"} 
+                        className="tab-switch"
+                        onClick={()=>{this.changeMap("racks")}}
+                />
+                <label htmlFor="tab-2" className="tab-label">Racks</label>
+              </div>
+              
+              <div className="tab">
+                <input type="radio" 
+                        name="css-tabs" 
+                        id="tab-4" 
+                        defaultChecked={this.state.mainMapSelection==="crime"} 
+                        className="tab-switch"
+                        onClick={()=>{this.changeMap("crime")}}
+                />
+                <label htmlFor="tab-4" className="tab-label">Crime</label>
+              </div>
+
+              <div className="tab">
+                <input type="radio" 
+                        name="css-tabs" 
+                        id="tab-5" 
+                        defaultChecked={this.state.mainMapSelection==="routes"} 
+                        className="tab-switch"
+                        onClick={()=>{this.changeMap("routes")}}
+                />
+                <label htmlFor="tab-5" className="tab-label">Routes</label>
+              </div>
+
+
+              <div className="tab">
+                <input type="radio" 
+                        name="css-tabs" 
+                        id="tab-6" 
+                        defaultChecked={this.state.mainMapSelection==="all"} 
+                        className="tab-switch"
+                        onClick={()=>{this.changeMap("all")}}
+                />
+                <label htmlFor="tab-6" className="tab-label">All</label>
+              </div>
+
+              <div className="tab">
+                <input type="radio" 
+                        name="css-tabs" 
+                        id="tab-7" 
+                        defaultChecked={this.state.mainMapSelection==="scenic"} 
+                        className="tab-switch"
+                        onClick={()=>{this.changeMap("scenic")}}
+                />
+                <label htmlFor="tab-7" className="tab-label">Scenic</label>
+              </div>
+
+            </div> 
+          </div>
         </div>
 
-        <div className="tabs-wrapper">
-          <div className="tabs">
-            
-            <div className="tab">
-              <input type="radio" 
-                      name="css-tabs" 
-                      id="tab-1" 
-                      defaultChecked={this.state.mainMapSelection==="traffic"} 
-                      className="tab-switch"
-                      onClick={()=>{this.changeMap("traffic")}}
-              />
-              <label htmlFor="tab-1" className="tab-label">Traffic</label>
-            </div>
 
-            <div className="tab">
-              <input type="radio" 
-                      name="css-tabs" 
-                      id="tab-2" 
-                      defaultChecked={this.state.mainMapSelection==="racks"} 
-                      className="tab-switch"
-                      onClick={()=>{this.changeMap("racks")}}
-              />
-              <label htmlFor="tab-2" className="tab-label">Racks</label>
-            </div>
-            
-            <div className="tab">
-              <input type="radio" 
-                      name="css-tabs" 
-                      id="tab-4" 
-                      defaultChecked={this.state.mainMapSelection==="crime"} 
-                      className="tab-switch"
-                      onClick={()=>{this.changeMap("crime")}}
-              />
-              <label htmlFor="tab-4" className="tab-label">Crime</label>
-            </div>
-
-            <div className="tab">
-              <input type="radio" 
-                      name="css-tabs" 
-                      id="tab-5" 
-                      defaultChecked={this.state.mainMapSelection==="routes"} 
-                      className="tab-switch"
-                      onClick={()=>{this.changeMap("routes")}}
-              />
-              <label htmlFor="tab-5" className="tab-label">Routes</label>
-            </div>
-
-
-            <div className="tab">
-              <input type="radio" 
-                      name="css-tabs" 
-                      id="tab-6" 
-                      defaultChecked={this.state.mainMapSelection==="all"} 
-                      className="tab-switch"
-                      onClick={()=>{this.changeMap("all")}}
-              />
-              <label htmlFor="tab-6" className="tab-label">All</label>
-            </div>
-
-            <div className="tab">
-              <input type="radio" 
-                      name="css-tabs" 
-                      id="tab-7" 
-                      defaultChecked={this.state.mainMapSelection==="scenic"} 
-                      className="tab-switch"
-                      onClick={()=>{this.changeMap("scenic")}}
-              />
-              <label htmlFor="tab-7" className="tab-label">Scenic</label>
-            </div>
-
-          </div> 
-        </div>
 
         <div className="map-container">
           {mapDisplay}
