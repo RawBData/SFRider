@@ -228,6 +228,7 @@ body {
 }
 
 .modal {
+    z-index: 1;
     position: fixed;
     top: 26%;
     left: 7%;
@@ -265,10 +266,10 @@ body {
 }
 
 .modal-content{
-    margin: 1vh 1vw 2.5vh 1vw;
-    line-height: 3vh;
-    font-weight: bolder;
-    text-align: center;
+  margin: 1vh 1vw 2.5vh 1vw;
+  line-height: 3vh;
+  font-weight: bolder;
+  text-align: center;
 }
 
 .modal-content-2{
@@ -285,6 +286,11 @@ body {
   justify-content: center;
   align-items: center;
 }
+
+.portfolio-link:link{
+  color:#67ccc7;
+}
+
 
 @media screen and (max-width: 1265px) {
   body {
@@ -320,34 +326,48 @@ body {
   }
 }
 
-.portfolio-link:link{
-  color:#67ccc7;
-}
 
 
 
 /* ----------- iPhone 6, 6S, 7 and 8 ----------- */
 
 /* Portrait and Landscape */
-@media only screen 
+/* @media only screen 
   and (min-device-width: 375px) 
   and (max-device-width: 667px) 
   and (-webkit-min-device-pixel-ratio: 2) { 
 
     .modal {
       position: fixed;
-      top: 15%;
-      left: 5%;
-      width: 90%;
+      top: 5%;
+      left: 2%;
+      width: 95%;
+      height:60%;
     
   }
 
   .tab-label{
-    font-size: 1.7vw;
+    font-size: 1.5vw;
+    font-weight: bold;
+  }
+
+  .tab-label{
+    font-size: 1.5vw;
+    font-weight: bold;
+  }
+
+  .modal-content{
+    margin: 0 0 0 0;
+    font-size: 0.9vw;
+  }
+  
+  .modal-content-2{
+    margin: 0 0 0 0.5vw;
+    font-size: 0.9vw;
   }
 
 
-}
+} */
 
 /* Portrait */
 @media only screen 
@@ -355,6 +375,33 @@ body {
   and (max-device-width: 667px) 
   and (-webkit-min-device-pixel-ratio: 2)
   and (orientation: portrait) { 
+
+
+    .modal {
+      position: fixed;
+      top: 10%;
+      left: 2%;
+      width: 95%;
+    }
+
+  .modal-content, .modal-content-2{
+    margin: 0 0 0 1vh;
+    font-size: 1.6vw;
+    line-height: 1.5vh;
+  }
+  
+
+  .tab-label{
+    font-size: 1.5vw;
+    font-weight: bold;
+  }
+
+  .content-container{
+    margin: 0 0 0 0;
+  }
+
+
+
 
 }
 
@@ -364,7 +411,36 @@ body {
   and (max-device-width: 667px) 
   and (-webkit-min-device-pixel-ratio: 2)
   and (orientation: landscape) { 
+    .tab-label{
+      font-size: 1.5vw;
+      font-weight: bold;
+    }
+    
+    .modal {
+      position: fixed;
+      top: 1%;
+      left: 2%;
+      width: 95%;
+    }
 
+    .modal-title{
+      font-size: 3.0vh;
+    }
+
+  .modal-content{
+    margin: 0 0 0 0.5vw;
+    font-size: 0.7vw;
+  }
+  
+  .modal-content-2{
+    margin: 0 0 0 0.5vw;
+    font-size: 0.7vw;
+  }
+
+
+  .content-container{
+    margin: 0 0 0 0;
+  }
 }
 
 /* 
