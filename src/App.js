@@ -32,7 +32,7 @@ class App extends React.Component{
   constructor(){
     super();
     this.state={
-      mainMapSelection:"traffic",
+      mainMapSelection:"racks",
       bikeRacks : [],
       crime : [],
       accidents : [],
@@ -51,7 +51,6 @@ class App extends React.Component{
     fetch("https://data.sfgov.org/resource/hn4j-6fx5.json")
     .then(results=> {return results.json()})
     .then(data=>{
-      console.log(data)
       this.setState({
         bikeRacks: data,
       })
@@ -84,13 +83,14 @@ class App extends React.Component{
 
     //fetch traffic data
     // fetch("https://data.sfgov.org/resource/awac-r27z.json")
-    // .then(results=> {return results.json()})
-    // .then(data=>{
-    //   //data = data.filter(crime=> crime.latitude && crime.incident_category === "Larceny Theft");
-    //   this.setState({
-    //     traffic: data,
-    //   })
-    // })
+    fetch("https://data.sfgov.org/resource/v4v2-5x7s.json")   
+    .then(results=> {return results.json()})
+    .then(data=>{
+      //data = data.filter(crime=> crime.latitude && crime.incident_category === "Larceny Theft");
+      this.setState({
+        traffic: data,
+      })
+    })
 
     //https://data.sfgov.org/resource/ygmz-vaxd.json
     //fetch Bicyle routes location

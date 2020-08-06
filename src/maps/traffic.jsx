@@ -28,7 +28,7 @@ export default function RacksMap({traffic}) {
                 maxZoom={10}
                 longitudeExtractor={p => p.point.coordinates[0]}
                 latitudeExtractor={p => p.point.coordinates[1]}
-                intensityExtractor={p => parseFloat(p.model6_vol)} 
+                intensityExtractor={p => parseFloat(p.yr2015_pm)} 
               />
               
             </Map>

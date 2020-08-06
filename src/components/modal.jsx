@@ -20,7 +20,7 @@ export default class Modal extends React.Component {
               </p>
               <p className="modal-content-2">
                 Each of the 6 maps gives a different snapshot of the SF biking experience. 
-                <br />* Traffic uses foot traffic data because other than red lights, SF is pretty bike friendly place.
+                <br />* Traffic uses bike traffic data because other than red lights, SF is pretty bike friendly place.
                 <br />* Racks are bikeracks listed by year installed.
                 <br />* Crime uses The OpenSF Crime data, which is filtered for theft of property crimes.
                 <br />* The last three maps, Routes, All and Scenic, are using OpenSF datasets of bike lanes all over the city. 
