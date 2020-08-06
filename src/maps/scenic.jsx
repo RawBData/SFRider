@@ -303,8 +303,8 @@ export default function RacksMap({racks,routes,traffic,crime}) {
                           <Marker
                             key={rk.objectid}
                             position={[
-                              rk.lat,
-                              rk.lon
+                              rk.point.latitude,
+                              rk.point.longitude
                             ]}
                             icon={rackIcon}
                           />
