@@ -17,7 +17,7 @@ const { BaseLayer, Overlay } = LayersControl;
 
 
 const center = [37.773943, -122.449484];
-
+//Creating icon
 const rackIcon = new Icon({
   iconUrl: require("../images/racks_icon.png"),
   iconSize: [30, 30]
