@@ -68,19 +68,6 @@ class App extends React.Component{
       })
     })
 
-    //fetch accident data
-    // fetch("https://data.sfgov.org/resource/nuek-vuh3.json")
-    // .then(results=> {return results.json()})
-    // .then(data=>{
-    //   // console.log(data);
-    //   // let crimeData = data.filter(crime=> crime.latitude && crime.incident_category === "Larceny Theft");
-    //   let accidentData = data.filter(acc=> acc.location.latitude && acc.call_type === "Traffic Collision");
-    //   // console.log(accidentData);
-    //   this.setState({
-    //     accidents: accidentData
-    //   })
-    // })
-
     //fetch traffic data
     // fetch("https://data.sfgov.org/resource/awac-r27z.json")
     fetch("https://data.sfgov.org/resource/v4v2-5x7s.json")   
