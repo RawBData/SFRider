@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/SFRider/static/css/main.f6b681e2.chunk.css",
-    "main.js": "/SFRider/static/js/main.8dfcf1b4.chunk.js",
-    "main.js.map": "/SFRider/static/js/main.8dfcf1b4.chunk.js.map",
+    "main.css": "/SFRider/static/css/main.b0b25fc1.chunk.css",
+    "main.js": "/SFRider/static/js/main.9a09126f.chunk.js",
+    "main.js.map": "/SFRider/static/js/main.9a09126f.chunk.js.map",
     "runtime-main.js": "/SFRider/static/js/runtime-main.bd31b8d8.js",
     "runtime-main.js.map": "/SFRider/static/js/runtime-main.bd31b8d8.js.map",
     "static/js/2.0f1a56d3.chunk.js": "/SFRider/static/js/2.0f1a56d3.chunk.js",
     "static/js/2.0f1a56d3.chunk.js.map": "/SFRider/static/js/2.0f1a56d3.chunk.js.map",
     "index.html": "/SFRider/index.html",
-    "precache-manifest.d3045863dd82dddfbdedd543588a0b4e.js": "/SFRider/precache-manifest.d3045863dd82dddfbdedd543588a0b4e.js",
+    "precache-manifest.6ada69a39f679f09fe3c9cf9188aaebb.js": "/SFRider/precache-manifest.6ada69a39f679f09fe3c9cf9188aaebb.js",
     "service-worker.js": "/SFRider/service-worker.js",
-    "static/css/main.f6b681e2.chunk.css.map": "/SFRider/static/css/main.f6b681e2.chunk.css.map",
+    "static/css/main.b0b25fc1.chunk.css.map": "/SFRider/static/css/main.b0b25fc1.chunk.css.map",
     "static/js/2.0f1a56d3.chunk.js.LICENSE.txt": "/SFRider/static/js/2.0f1a56d3.chunk.js.LICENSE.txt",
     "static/media/SFRiderLogo_04.png": "/SFRider/static/media/SFRiderLogo_04.15538f6f.png",
     "static/media/crime.png": "/SFRider/static/media/crime.596b3fdf.png",
@@ -23,7 +23,7 @@
   "entrypoints": [
     "static/js/runtime-main.bd31b8d8.js",
     "static/js/2.0f1a56d3.chunk.js",
-    "static/css/main.f6b681e2.chunk.css",
-    "static/js/main.8dfcf1b4.chunk.js"
+    "static/css/main.b0b25fc1.chunk.css",
+    "static/js/main.9a09126f.chunk.js"
   ]
 }
