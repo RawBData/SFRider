@@ -283,6 +283,15 @@ class App extends React.Component{
 
             </div> 
           </div>
+
+          <div className="socials">
+            <div>
+              <a href="https://www.linkedin.com/in/benjaminrawner/" target="_blank"><i className="fab fa-linkedin lnkd"></i></a></div>
+            <div>
+              <a href="https://github.com/RawBData" target="_blank"><i className="fab fab fa-github ghub"></i></a></div>
+            <div>
+              <a href="https://rawbdata.github.io/porfolio/" target="_blank"><i className="fas fa-address-card port"></i></a></div>
+          </div>
         </div>
 
 

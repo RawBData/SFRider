@@ -8,7 +8,7 @@ export default class Modal extends React.Component {
         return null;
       }
       return (
-        <div class="modal" id="modal">
+        <div className="modal" id="modal">
           <h2 className="modal-title">About SFRider</h2>
           <div className="content-container">
               <p className="modal-content">
@@ -33,9 +33,9 @@ export default class Modal extends React.Component {
                 <br />Check out some of my other great projects on my github <a className="portfolio-link" href="https://rawbdata.github.io/porfolio/" target="_blank">porfolio</a> page.
                </p>
               </div>
-          <div class="actions">
+          <div className="actions">
               
-            <button class="toggle-button" onClick={this.onClose}>
+            <button className="toggle-button" onClick={this.onClose}>
               To The Maps!
 
             </button>
