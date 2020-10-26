@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "1de3e30b449ec45f1b742ecbd49dfd4e",
+    "revision": "cf13c84c0139def20cd05ac00b108a3a",
     "url": "/SFRider/index.html"
   },
   {
-    "revision": "1519140bd6a232c09af4",
+    "revision": "ac7aac4d78bd7fc223a8",
     "url": "/SFRider/static/css/main.b0b25fc1.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/SFRider/static/js/2.0f1a56d3.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "1519140bd6a232c09af4",
-    "url": "/SFRider/static/js/main.9a09126f.chunk.js"
+    "revision": "ac7aac4d78bd7fc223a8",
+    "url": "/SFRider/static/js/main.c4fc1f4b.chunk.js"
   },
   {
     "revision": "989ca6ef331426191c1d",
