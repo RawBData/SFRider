@@ -8,6 +8,7 @@ import Legend from './legend';
 
 export default function RacksMap({traffic}) {
   const [activeTraffic, setActiveTraffic] = React.useState(null);
+  //console.log("traffic",traffic);
   return (
           <div>
             
@@ -26,8 +27,8 @@ export default function RacksMap({traffic}) {
                 opacity={.1}
                 points={traffic}
                 maxZoom={10}
-                longitudeExtractor={p => p.point.coordinates[0]}
-                latitudeExtractor={p => p.point.coordinates[1]}
+                longitudeExtractor={p => p.shape.coordinates[0]}
+                latitudeExtractor={p => p.shape.coordinates[1]}
                 intensityExtractor={p => parseFloat(p.yr2015_pm)} 
               />
               

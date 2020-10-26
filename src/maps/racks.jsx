@@ -15,7 +15,7 @@ const center = [37.773943, -122.449484]
 
 export default function RacksMap({racks}) {
   const [activeRack, setActiveRack] = React.useState(null);
-  console.log(racks)
+  //console.log(racks)
   return (
       <div>
 

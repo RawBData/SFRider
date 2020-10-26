@@ -101,8 +101,8 @@ export default function RacksMap({racks,routes,traffic,crime}) {
                           <Marker
                             key={rk.objectid}
                             position={[
-                              rk.point.latitude,
-                              rk.point.longitude
+                              rk.shape.coordinates[1],
+                              rk.shape.coordinates[0],
                             ]}
                             icon={rackIcon}
                           />
@@ -117,8 +117,8 @@ export default function RacksMap({racks,routes,traffic,crime}) {
                       opacity={.1}
                       points={traffic}
                       maxZoom={10}
-                      longitudeExtractor={p => p.point.coordinates[0]}
-                      latitudeExtractor={p => p.point.coordinates[1]}
+                      longitudeExtractor={p => p.shape.coordinates[0]}
+                      latitudeExtractor={p => p.shape.coordinates[1]}
                       intensityExtractor={p => parseFloat(p.yr2015_pm)} 
                     />
                   </LayerGroup>

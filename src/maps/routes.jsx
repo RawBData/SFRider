@@ -55,8 +55,8 @@ export default function Routes({routes}) {
                   <Marker
                     key={light.objectid + (Math.floor(Math.random()*10000)*Math.floor(Math.random()*10000))}
                     position={[
-                      light.point.coordinates[1],
-                      light.point.coordinates[0]
+                      light.shape.coordinates[1],
+                      light.shape.coordinates[0]
                     ]}
                     onClick={() => {
                       {/* console.log("marker opened") */}
@@ -69,8 +69,8 @@ export default function Routes({routes}) {
                 {activeLight && (
                 <Popup
                   position={[
-                    activeLight.point.coordinates[1],
-                    activeLight.point.coordinates[0]
+                    activeLight.shape.coordinates[1],
+                    activeLight.shape.coordinates[0]
                   ]}
                   onClose={() => {
                     {/* console.log("marker closed") */}
