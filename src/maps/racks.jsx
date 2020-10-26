@@ -15,7 +15,7 @@ const center = [37.773943, -122.449484]
 
 export default function RacksMap({racks}) {
   const [activeRack, setActiveRack] = React.useState(null);
-  // console.log(racks)
+  console.log(racks)
   return (
       <div>
 
@@ -34,8 +34,8 @@ export default function RacksMap({racks}) {
                         <Marker
                           key={rk.objectid}
                           position={[
-                            rk.point.latitude,
-                            rk.point.longitude
+                            rk.shape.coordinates[1],
+                            rk.shape.coordinates[0],
                           ]}
                           onClick={() => {
                             {/* console.log("marker opened") */}
@@ -53,8 +53,8 @@ export default function RacksMap({racks}) {
                         <Marker
                           key={rk.objectid}
                           position={[
-                            rk.point.latitude,
-                            rk.point.longitude
+                            rk.shape.coordinates[1],
+                            rk.shape.coordinates[0],
                           ]}
                           onClick={() => {
                             {/* console.log("marker opened") */}
@@ -72,8 +72,8 @@ export default function RacksMap({racks}) {
                         <Marker
                           key={rk.objectid}
                           position={[
-                            rk.point.latitude,
-                            rk.point.longitude
+                            rk.shape.coordinates[1],
+                            rk.shape.coordinates[0],
                           ]}
                           onClick={() => {
                             {/* console.log("marker opened") */}
@@ -91,8 +91,8 @@ export default function RacksMap({racks}) {
                         <Marker
                           key={rk.objectid}
                           position={[
-                            rk.point.latitude,
-                            rk.point.longitude
+                            rk.shape.coordinates[1],
+                            rk.shape.coordinates[0],
                           ]}
                           onClick={() => {
                             {/* console.log("marker opened") */}
@@ -110,8 +110,8 @@ export default function RacksMap({racks}) {
                         <Marker
                           key={rk.objectid}
                           position={[
-                            rk.point.latitude,
-                            rk.point.longitude
+                            rk.shape.coordinates[1],
+                            rk.shape.coordinates[0],
                           ]}
                           onClick={() => {
                             {/* console.log("marker opened") */}
@@ -129,8 +129,8 @@ export default function RacksMap({racks}) {
             {activeRack && (
                   <Popup
                     position={[
-                      activeRack.point.latitude,
-                      activeRack.point.longitude
+                      activeRack.shape.coordinates[1],
+                      activeRack.shape.coordinates[0],
                     ]}
                     onClose={() => {
                       {/* console.log("marker closed") */}
